@@ -1,6 +1,6 @@
 [
   {
-    "folder": "認知症",
+    "folder": "1. 認知症",
     "questions": [
       { "question": "認知機能に影響がある薬を3つ以上あげよ",
           "answer": "抗コリン薬(抗パーキンソン薬の一部、過活動膀胱治療薬)、抗ヒスタミン薬・H2受容体阻害薬、向精神病薬など" },
@@ -9,10 +9,143 @@
     ]
   },
   {
-    "folder": "がん",
+    "folder": "2. がん",
     "questions": [
       { "question": "在宅医療の四苦八苦、①出血、②（下痢）、③（せん妄）、④呼吸苦、⑤夜の見守り、⑥（トイレ）に行けない、⑦痰が多い、⑧スピリチャルペイン", "answer": "4" },
       { "question": "What is the square root of 9?", "answer": "3" }
+    ]
+  },
+  {
+    "folder": "3. 心不全",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "4. ALS",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "5. COPD",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "6. 肝硬変",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "7. 老衰",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "8. 緊急対応",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "9. 褥瘡",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "10. 薬が多い",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "11. 排尿障害",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "12. 気管切開",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "13. 胃瘻・NG",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "14. 人生会議",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "15. 食べられない",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "16. 独り暮らし",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "17. リハビリテーション",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "18. 小児在宅医療",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "19. 残された家族へのケア",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "20. 発熱・腎機能低下",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
+    ]
+  },
+  {
+    "folder": "21. 利益感度",
+    "questions": [
+      { "question": "a", "answer": "b" },
+      { "question": "c", "answer": "d" }
     ]
   }
 ]

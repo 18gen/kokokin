@@ -2,54 +2,65 @@ import SwiftUI
 
 struct QuizView: View {
     let questions: [Question]
+    let title: String
     @State private var currentQuestionIndex = 0
     @State private var userAnswer = ""
+    @State private var userAnswers: [String] = [] // Store all user answers
     @State private var score = 0
-    @State private var showScoreAlert = false
     @State private var isQuizComplete = false
 
     var body: some View {
         VStack {
             if !isQuizComplete {
-                Text("Question \(currentQuestionIndex + 1) of \(questions.count)")
-                    .font(.headline)
+                // Quiz in Progress
+                HStack {
+                    Text(title)
+                        .font(.headline)
+                    Text("問題 \(currentQuestionIndex + 1) の \(questions.count)")
+                        .font(.footnote)
+                }
                 Text(questions[currentQuestionIndex].question)
                     .font(.title)
                     .padding()
                 TextField("Your answer", text: $userAnswer)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding()
-                Button("Submit") {
-                    checkAnswer()
+                HStack{
+                    Button("Next") {
+                        userAnswers.append(userAnswer)
+                        userAnswer = ""
+                        nextQuestion()
+                    }
+                    Button("Next") {
+                        userAnswers.append(userAnswer)
+                        userAnswer = ""
+                        nextQuestion()
+                    }
                 }
                 .padding()
             } else {
-                Text("Quiz Complete!")
+                // Review Screen
+                Text("結果")
                     .font(.largeTitle)
-                Text("Your Score: \(score) / \(questions.count)")
-                    .font(.title)
-                    .padding()
-                Button("Restart Quiz") {
+                List(0..<questions.count, id: \.self) { index in
+                    VStack(alignment: .leading, spacing: 5) {
+                        Text("Q\(index + 1): \(questions[index].question)")
+                            .font(.headline)
+                        Text(userAnswers[index])
+                            .foregroundColor(userAnswers[index].lowercased() == questions[index].answer.lowercased() ? .green : .red)
+                        Text("回答: \(questions[index].answer)")
+                            .foregroundColor(.blue)
+                    }
+                    .padding(.vertical, 5)
+                }
+                Button("初めからやり直す") {
                     restartQuiz()
                 }
                 .padding()
             }
             Spacer()
         }
-        .padding()
-        .alert("Correct!", isPresented: $showScoreAlert) {
-            Button("Next") { nextQuestion() }
-        }
-    }
-
-    private func checkAnswer() {
-        if userAnswer.lowercased() == questions[currentQuestionIndex].answer.lowercased() {
-            score += 1
-            showScoreAlert = true
-        } else {
-            nextQuestion()
-        }
-        userAnswer = ""
+        .padding(.horizontal, 16)
     }
 
     private func nextQuestion() {
@@ -62,8 +73,9 @@ struct QuizView: View {
 
     private func restartQuiz() {
         currentQuestionIndex = 0
-        score = 0
         userAnswer = ""
+        userAnswers = [] // Clear all user answers
+        score = 0
         isQuizComplete = false
     }
 }
