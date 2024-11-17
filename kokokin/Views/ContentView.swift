@@ -4,16 +4,22 @@
 //
 //  Created by Gen Ichihashi on 2024-11-16.
 //
-
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var quizData = QuizData() // Load quiz data from JSON
-    @State var selectectTab = 0
-    
+    @StateObject private var quizData = QuizData()
+    @State var selectedTab = 0
+
     var body: some View {
-        TabView(selection: $selectectTab) {
-            
+        TabView(selection: $selectedTab) {
+            Text("勉強")
+                .tabItem {
+                    Image(systemName: "pencil")
+                    Text("勉強")
+                }
+                .tag(0)
+
+            // Quiz Tab
             NavigationView {
                 List(quizData.folders, id: \.folder) { folder in
                     NavigationLink(destination: QuizView(questions: folder.questions, title: folder.folder)) {
@@ -27,22 +33,23 @@ struct ContentView: View {
                     }
                 }
                 .navigationTitle("ココキン問題集")
-            }.tabItem {
-                Image(systemName: "plus")
-                Text("問題")
-            }.tag(0)
-                
-                Text("Hello").tabItem{ Image(systemName: "plus")
-                    Text("勉強")
-                }.tag(1)
-                
-                Text("Hello").tabItem{ Image(systemName: "pencil")
-                    Text("記録")
-                }.tag(2)
-                
             }
+            .tabItem {
+                Image(systemName: "book")
+                Text("問題")
+            }
+            .tag(1)
+
+            Text("記録")
+                .tabItem {
+                    Image(systemName: "pencil")
+                    Text("記録")
+                }
+                .tag(2)
         }
+    }
 }
+
 
 #Preview {
     ContentView()
