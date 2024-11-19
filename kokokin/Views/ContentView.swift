@@ -12,12 +12,23 @@ struct ContentView: View {
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            Text("勉強")
-                .tabItem {
-                    Image(systemName: "pencil")
-                    Text("勉強")
+            // Flashcards Tab
+            NavigationView {
+                List(quizData.folders, id: \.folder) { folder in
+                    NavigationLink(destination: FlashcardView(questions: folder.questions, title: folder.folder)) {
+                        HStack {
+                            Text(folder.folder)
+                                .font(.headline)
+                        }
+                    }
                 }
-                .tag(0)
+                .navigationTitle("勉強")
+            }
+            .tabItem {
+                Image(systemName: "lightbulb")
+                Text("勉強")
+            }
+            .tag(0)
 
             // Quiz Tab
             NavigationView {

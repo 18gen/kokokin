@@ -30,9 +30,10 @@ struct QuizView: View {
 
                 // Question and Answer
                 VStack(alignment: .leading, spacing: 12) {
-                    Text("Q\(currentQuestionIndex + 1): \(questions[currentQuestionIndex].question)")
-                        .font(.title2)
-                        .padding(.horizontal)
+                    ScrollView {
+                        Text("Q\(currentQuestionIndex + 1): \(questions[currentQuestionIndex].question)")
+                            .font(.title2)
+                    }.padding(.horizontal)
                     
                     AutoSizingTextField(text: $userAnswer)
                         .frame(maxHeight: 120)
